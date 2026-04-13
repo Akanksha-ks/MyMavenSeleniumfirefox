@@ -9,10 +9,11 @@ public class App {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+        // Tell Selenium where geckodriver is located
+        System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
 
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless");   // Important for Jenkins
+        options.addArguments("--headless");
 
         WebDriver driver = new FirefoxDriver(options);
 
