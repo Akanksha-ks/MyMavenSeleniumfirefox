@@ -2,8 +2,8 @@ package com.example;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.WindowType;
-import java.time.Duration;
 
 public class App {
 
@@ -11,10 +11,12 @@ public class App {
 
         System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 
-        WebDriver driver = new FirefoxDriver();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");   // Important for Jenkins
+
+        WebDriver driver = new FirefoxDriver(options);
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // Open first website
         driver.get("https://www.saucedemo.com/");
