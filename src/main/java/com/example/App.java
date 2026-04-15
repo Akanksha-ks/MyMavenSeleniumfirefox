@@ -12,6 +12,7 @@ public class App {
         System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 
         FirefoxOptions options = new FirefoxOptions();
+        options.setBinary("/usr/bin/firefox");
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
