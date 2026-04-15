@@ -12,7 +12,9 @@ public class App {
         System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless");   // Jenkins needs this
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 
         WebDriver driver = new FirefoxDriver(options);
 
